@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/ProvinceWatch/open-watch/issues"
   },
-  "homepage": "https://github.com/ProvinceWatch/open-watch#readme"
+  "homepage": "https://github.com/ProvinceWatch/open-watch#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "chai": "^4.3.7"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
 }
