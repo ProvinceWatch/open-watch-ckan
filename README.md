@@ -29,14 +29,14 @@ const customCKAN = CKAN.createEndpoint('https://data.example.ckan.api/3');
 - Making requests is the same with both predefined and custom `CKAN_Endpoints`:
 ```js
 // All Datasets
-const albertaDatasets   = CKAN.getAllDatasets(AB_CKAN);
-const customDatasets    = CKAN.getAllDatasets(customCKAN);
+const albertaDatasets   = await CKAN.getAllDatasets(AB_CKAN);
+const customDatasets    = await CKAN.getAllDatasets(customCKAN);
 
 // Recently Changed Datasets
-const albertaRecentData = CKAN.getAllDatasets(AB_CKAN);
-const customRecentData  = CKAN.getAllDatasets(customCKAN);
+const albertaRecentData = await CKAN.getAllDatasets(AB_CKAN);
+const customRecentData  = await CKAN.getAllDatasets(customCKAN);
 
 // Tag Names
-const albertaTagNames   = CKAN.getAllTagNames(AB_CKAN);
-const customTagNames    = CKAN.getAllTagNames(customCKAN);
+const albertaTagNames   = await CKAN.getAllTagNames(AB_CKAN);
+const customTagNames    = await CKAN.getAllTagNames(customCKAN);
 ```
