@@ -22,3 +22,10 @@ export const availableEndpoints = [
   OT_CKAN,
   CAN_CKAN,
 ]
+
+export const endpoints = {
+  AB_CKAN,
+  BC_CKAN,
+  OT_CKAN,
+  CAN_CKAN,
+}

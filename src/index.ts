@@ -1,5 +1,5 @@
-import { AxiosResponse } from 'axios';
-import { availableEndpoints } from './ckan-endpoints';
+import axios, { AxiosResponse } from 'axios';
+import { availableEndpoints, endpoints } from './ckan-endpoints';
 import { handleAxiosError, handleResponseError, handleDataError } from './errors';
 import { CKAN_Endpoint, DatasetList, TagNamesList, Dataset, CKANError, CKAN_ErrorObj } from './types';
 
@@ -33,6 +33,10 @@ const makeRequest = async <T>(CKANEndpoint: CKAN_Endpoint, action: string): Prom
 };
 
 
+const createEndpoint = (baseURL: string) => {
+  return axios.create({ baseURL }) as CKAN_Endpoint;
+}
+
 const getAllDatasets = async (CKANEndpoint: CKAN_Endpoint): Promise<DatasetList> => {
   return makeRequest<DatasetList>(CKANEndpoint, '/action/package_list');
 };
@@ -54,5 +58,7 @@ export {
   getAllTagNames,
   getDatasetFromId,
   getRecentlyChangedDatasets,
-  availableEndpoints
+  createEndpoint,
+  availableEndpoints,
+  endpoints
 }
