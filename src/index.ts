@@ -33,7 +33,7 @@ const makeRequest = async <T>(CKANEndpoint: CKAN_Endpoint, action: string): Prom
 };
 
 
-const createEndpoint = (baseURL: string) => {
+const createEndpoint = (baseURL: string): CKAN_Endpoint => {
   return axios.create({ baseURL }) as CKAN_Endpoint;
 }
 
