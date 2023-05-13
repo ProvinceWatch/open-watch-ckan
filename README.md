@@ -32,7 +32,7 @@ const {
 ### Custom Endpoints
 - If your target API is not included in the default `CKAN.endpoints` object, you can create your own `CKAN_Endpoint` object.
 ```ts
-const customCKAN = CKAN.createEndpoint('https://data.example.ckan.api/3');
+const customCKAN: CKAN_Endpoint = CKAN.createEndpoint('https://data.example.ckan.api/3');
 ```
 
 ## Making Requests
@@ -43,8 +43,9 @@ const albertaDatasets: DatasetList   = await CKAN.getAllDatasets(AB_CKAN);
 const customDatasets: DatasetList    = await CKAN.getAllDatasets(customCKAN);
 
 // Specific Dataset
-const specificAlbertaData: Dataset   = await CKAN.getDatasetFromId(AB_CKAN);
-const specificCustomData: Dataset    = await CKAN.getDatasetFromId(customCKAN);
+const specificAlbertaData: Dataset   = await CKAN.getDatasetFromId(AB_CKAN, '<dataset_id>');
+const specificCustomData: Dataset    = await CKAN.getDatasetFromId(customCKAN, '<dataset_id>');
+
 // Recently Changed Datasets
 const albertaRecentData: DatasetList = await CKAN.getAllDatasets(AB_CKAN);
 const customRecentData: DatasetList  = await CKAN.getAllDatasets(customCKAN);
@@ -56,19 +57,21 @@ const customTagNames: TagNamesList   = await CKAN.getAllTagNames(customCKAN);
 
 For convinience, these are the type defitions for the different responses from CKAN API calls
 ```ts
-export interface DatasetList {
+type CKAN_Endpoint = AxiosInstance
+
+interface DatasetList {
   help: string,
   success: boolean,
   result: string[]
 };
 
-export interface Dataset {
+interface Dataset {
   help: string,
   success: boolean,
   result: object
 };
 
-export interface TagNamesList {
+interface TagNamesList {
   help: string,
   success: boolean,
   result: string[]
