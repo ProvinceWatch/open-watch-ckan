@@ -1,6 +1,8 @@
 # open-watch-ckan
 
 [![Node.js CI](https://github.com/ProvinceWatch/open-watch/actions/workflows/node.js.yml/badge.svg)](https://github.com/ProvinceWatch/open-watch-ckan/actions/workflows/node.js.yml)
+![bundlesize](https://img.shields.io/bundlephobia/min/open-watch-ckan)
+![issues](https://img.shields.io/github/issues-raw/ProvinceWatch/open-watch-ckan)
 
 open-watch-ckan is a JavaScript Library for interacting with [CKAN APIs](https://ckan.org/).
 
@@ -9,7 +11,7 @@ Please refer to the [Official CKAN Documentation](https://docs.ckan.org/en/2.10/
 
 ## Installing
 ```bash
-npm install @province-watch/open-watch-ckan
+npm install open-watch-ckan
 ```
 
 ## Using The Library
