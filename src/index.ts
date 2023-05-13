@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { availableEndpoints, endpoints } from './ckan-endpoints';
+import { endpoints } from './ckan-endpoints';
 import { handleAxiosError, handleResponseError, handleDataError } from './errors';
 import { CKAN_Endpoint, DatasetList, TagNamesList, Dataset, CKANError, CKAN_ErrorObj } from './types';
 
@@ -59,6 +59,5 @@ export {
   getDatasetFromId,
   getRecentlyChangedDatasets,
   createEndpoint,
-  availableEndpoints,
   endpoints
 }
