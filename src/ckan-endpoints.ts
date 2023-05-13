@@ -16,9 +16,9 @@ const CAN_CKAN: AxiosInstance = axios.create({
   baseURL: 'https://open.canada.ca/data/en/api/3'
 });
 
-export const availableEndpoints = [
+export const endpoints = {
   AB_CKAN,
   BC_CKAN,
   OT_CKAN,
   CAN_CKAN,
-]
+}

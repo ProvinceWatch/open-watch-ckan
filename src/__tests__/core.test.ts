@@ -3,11 +3,13 @@ import {
   getAllTagNames,
   getDatasetFromId,
   getRecentlyChangedDatasets,
-  availableEndpoints
+  endpoints
 } from '../index';
 import { CKANError } from '../types';
 
 describe('Core Function Responses', () => {
+  const availableEndpoints = Object.values(endpoints);
+
   let totalErrs = 0;
   let totalReqs = 0;
 
