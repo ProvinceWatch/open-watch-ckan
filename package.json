@@ -1,0 +1,19 @@
+{
+  "name": "@province-watch/open-watch-ckan",
+  "version": "1.0.0",
+  "description": "Unofficial JavaScript Library For Alberta's CKAN API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProvinceWatch/open-watch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ProvinceWatch/open-watch/issues"
+  },
+  "homepage": "https://github.com/ProvinceWatch/open-watch#readme"
+}
