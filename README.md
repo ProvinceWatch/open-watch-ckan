@@ -16,7 +16,7 @@ npm install open-watch-ckan
 
 ## Using The Library
 ```js
-const CKAN = require('@province-watch/open-watch-ckan');
+const CKAN = require('open-watch-ckan');
 ```
 ## CKAN Endpoints - Predefined Objects and Custom Creation
 - `CKAN_Endpoints` are axios instances configured to point to a specific base URL of a CKAN API.
@@ -41,20 +41,20 @@ const customCKAN: CKAN_Endpoint = CKAN.createEndpoint('https://data.example.ckan
 - Making requests is the same with both predefined and custom `CKAN_Endpoints`:
 ```ts
 // All Datasets
-const albertaDatasets: DatasetList   = await CKAN.getAllDatasets(AB_CKAN);
-const customDatasets: DatasetList    = await CKAN.getAllDatasets(customCKAN);
+const albertaDatasets: DatasetList = await CKAN.getAllDatasets(AB_CKAN);
+const customDatasets: DatasetList = await CKAN.getAllDatasets(customCKAN);
 
 // Specific Dataset
-const specificAlbertaData: Dataset   = await CKAN.getDatasetFromId(AB_CKAN, '<dataset_id>');
-const specificCustomData: Dataset    = await CKAN.getDatasetFromId(customCKAN, '<dataset_id>');
+const specificAlbertaData: Dataset = await CKAN.getDatasetFromId(AB_CKAN, '<dataset_id>');
+const specificCustomData: Dataset = await CKAN.getDatasetFromId(customCKAN, '<dataset_id>');
 
 // Recently Changed Datasets
 const albertaRecentData: DatasetList = await CKAN.getAllDatasets(AB_CKAN);
 const customRecentData: DatasetList  = await CKAN.getAllDatasets(customCKAN);
 
 // Tag Names
-const albertaTagNames: TagNamesList  = await CKAN.getAllTagNames(AB_CKAN);
-const customTagNames: TagNamesList   = await CKAN.getAllTagNames(customCKAN);
+const albertaTagNames: TagNamesList = await CKAN.getAllTagNames(AB_CKAN);
+const customTagNames: TagNamesList = await CKAN.getAllTagNames(customCKAN);
 ```
 
 For convinience, these are the type defitions for the different responses from CKAN API calls
