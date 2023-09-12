@@ -13,7 +13,6 @@ describe('Core Function Responses', () => {
 
   let totalErrs = 0;
   let totalReqs = 0;
-  const tags: string[] = [];
 
   describe('getAllDatasets()', () => {
     availableEndpoints.forEach((CKANEndpoint, i) => {
@@ -68,8 +67,6 @@ describe('Core Function Responses', () => {
           expect(tagNameRes).toHaveProperty('result');
           expect(tagNameRes.success).toBe(true);
           expect(Array.isArray(tagNameRes.result)).toBe(true);
-
-          tags.push(tagNameRes.result[0]);
         } catch (error) {
           // If we error out, make sure we are throwing an approprite error class.
           expect(error).toBeInstanceOf(CKANError);
@@ -101,7 +98,7 @@ describe('Core Function Responses', () => {
   });
 
   describe('getDatasetsFromTag()', () => {
-    // Fetch all the tags before any test in this block runs
+    const tags: string[] = [];
     beforeAll(async () => {
       for (const CKANEndpoint of availableEndpoints) {
         const tagNameRes = await getAllTagNames(CKANEndpoint);
