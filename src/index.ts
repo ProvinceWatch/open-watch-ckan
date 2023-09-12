@@ -53,11 +53,16 @@ const getRecentlyChangedDatasets = async (CKANEndpoint: CKAN_Endpoint): Promise<
   return makeRequest<DatasetList>(CKANEndpoint, '/action/recently_changed_packages_activity_list');
 };
 
+const getDatasetsFromTag = async (CKANEndpoint: CKAN_Endpoint, tag: string): Promise<DatasetList> => {
+  return makeRequest<DatasetList>(CKANEndpoint, `/action/tag_show?id=${tag}`);
+}
+
 export {
   getAllDatasets,
   getAllTagNames,
   getDatasetFromId,
   getRecentlyChangedDatasets,
   createEndpoint,
+  getDatasetsFromTag,
   endpoints
 }
