@@ -3,6 +3,7 @@ import {
   getAllTagNames,
   getDatasetFromId,
   getRecentlyChangedDatasets,
+  getDatasetsFromTag,
   endpoints
 } from '../index';
 import { CKANError } from '../types';
@@ -90,6 +91,30 @@ describe('Core Function Responses', () => {
         } catch (error) {
           // If we error out, make sure we are throwing an approprite error class.
           expect(error).toBeInstanceOf(CKANError);
+          totalErrs += 1;
+        }
+      });
+    });
+  });
+
+  describe('getDatasetsFromTag()', () => {
+    const tags: string[] = [];
+    beforeAll(async () => {
+      for (const CKANEndpoint of availableEndpoints) {
+        const tagNameRes = await getAllTagNames(CKANEndpoint);
+        tags.push(tagNameRes.result[0]);
+      }
+    });
+
+    availableEndpoints.forEach((CKANEndpoint, i) => {
+      it(`should work for ${CKANEndpoint.defaults.baseURL}`, async () => {
+        try {
+          totalReqs += 1;
+          const recentDataRes = await getDatasetsFromTag(CKANEndpoint, tags[i]);
+          expect(recentDataRes).toHaveProperty('help');
+          expect(recentDataRes).toHaveProperty('success');
+          expect(recentDataRes).toHaveProperty('result');
+        } catch (error) {
           totalErrs += 1;
         }
       });
